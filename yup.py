@@ -1,0 +1,120 @@
+#class, object и аргументы ###############################
+
+#class Car:
+#    model = 'bmw'
+#    engine = 1.6
+
+#    def drive():
+#        print('lets go')
+
+#Car.drive()
+
+#getattr(Car,'drive')()
+
+#a1 = Car()
+#a2 = Car()
+
+#a1.model='Mersedes'
+#a1.beach=10
+
+#print(Car.__dict__)
+#print(a1.__dict__)
+
+#getattr(Car, 'x', 100)
+#setattr(Car, 'y', 200)
+#print(type(a1))
+
+
+#self и __init__ #########################################
+
+#class Point:
+#    def __init__(self, x = 0, y = 0):
+#        self.x = x
+#        self.y = y
+    
+#    def __del__(self):
+#        print("Удаление экземпляра: " + self.__str__())
+
+#    x = 1; y = 1
+
+#    def blabla(self, x, y):
+#        self.x = x
+#        self.y = y
+
+#pt = Point(5, 10)
+#pt = Point()
+#pt2 = Point(5)
+#pt3 = Point(5, 10)
+#pt.blabla(5,10)
+#print(pt.__dict__, pt2.__dict__, pt3.__dict__,sep="\n")
+
+#Моно состояние для все экземпляров
+
+#class Cat:
+#    __sharit_attr = {
+#        'beerd': 'siam',
+#        'color': 'black'
+#    }
+
+#    def __init__(self):
+#        self.__dict__ = Cat.__sharit_attr
+
+
+#a1 = Cat()
+#a1.p = 'say'
+#print(a1.__dict__, sep='\n')
+#print(Cat.__dict__, sep='\n')
+
+#Публичные, приватные, защищенные атрибуты и методы гетеры и сетеры ############
+#class BankAccount:
+#    def __init__(self, name, balance, passport):
+#        self.__a = name
+#        self.__b = balance
+#        self.__c = passport
+    
+#    def public_print_data(self):
+#        print(self.a, self.b, self.c)
+
+    #def protect_print_data(self):
+    #    print(self.__a, self.__b, self.__c) #Если мы видим в нутри класса переменную с _ то это лучше не использовать вне класса
+
+
+#account1 = BankAccount('Bob', 100000, 454845646854)
+#ccount1.protect_print_data()
+#try:
+#    print(account1.__a, account1.__b, account1.__c,sep='\n')
+#except AttributeError:
+#    print('Мы не имеем или не можем предоставить доступ к базе данных нашил клиентов')
+
+
+#Геттеры Сеттеры, декоратор property ############################
+class Layer:
+    WGET = 5
+
+    def __init__(self, lvl = 0):
+        self.__lvl = lvl
+    
+    def __checkValue(lvl):
+        if Layer.__checkValue(lvl):
+            return True
+        return False
+
+    def setLVL(self, lvl):
+        if (isinstance(lvl, int)) or (isinstance(lvl,float)):
+            self.__lvl = lvl
+        else:
+            print('Введите число')
+
+    def getLVL(self):
+        return self.__lvl
+
+    def __setattr__(self, key, value):  #key == pt
+        if key == 'WGET':   
+            raise AttributeError    #raise == Исключение
+        else:
+            self.__dict__[key] = value  #__dict__[key] == все остальные pt ; #\ value == свойства
+    
+pt = Layer()
+pt.WGET = 5
+pt.setLVL(1000)
+rint(pt.getLVL())
