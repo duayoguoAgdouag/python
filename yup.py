@@ -1,5 +1,6 @@
 #class, object и аргументы ###############################
 
+
 #class Car:
 #    model = 'bmw'
 #    engine = 1.6
@@ -88,33 +89,82 @@
 
 
 #Геттеры Сеттеры, декоратор property ############################
-class Layer:
-    WGET = 5
 
-    def __init__(self, lvl = 0):
-        self.__lvl = lvl
+
+#class Layer:
+#    WGET = 5
+
+#    def __init__(self, lvl = 0):
+#        self.__lvl = lvl
     
-    def __checkValue(lvl):
-        if Layer.__checkValue(lvl):
-            return True
-        return False
+#    def __checkValue(lvl):
+#        if Layer.__checkValue(lvl):
+#            return True
+#        return False
 
-    def setLVL(self, lvl):
-        if (isinstance(lvl, int)) or (isinstance(lvl,float)):
-            self.__lvl = lvl
-        else:
-            print('Введите число')
+#    def setLVL(self, lvl):
+#        if (isinstance(lvl, int)) or (isinstance(lvl,float)):
+#            self.__lvl = lvl
+#        else:
+#            print('Введите число')
 
-    def getLVL(self):
-        return self.__lvl
+#    def getLVL(self):
+#        return self.__lvl
 
-    def __setattr__(self, key, value):  #key == pt
-        if key == 'WGET':   
-            raise AttributeError    #raise == Исключение
-        else:
-            self.__dict__[key] = value  #__dict__[key] == все остальные pt ; #\ value == свойства
+#    def __setattr__(self, key, value):  #key == pt
+#        if key == 'WGET':   
+#            raise AttributeError    #raise == Исключение
+#        else:
+#            self.__dict__[key] = value  #__dict__[key] == все остальные pt ; #\ value == свойства
     
-pt = Layer()
-pt.WGET = 5
-pt.setLVL(1000)
-rint(pt.getLVL())
+#pt = Layer()
+#pt.WGET = 5
+
+
+#class CoordValue:
+#    def __init__(self, name):
+#        self.__name = name #name == новые значения
+#
+#    def __get__(self, instance, owner):
+#        return instance.__dict__[self.__name]
+#    
+#    def __set__(self, instance, value):
+#        instance.__dict__[self.__name] = value #instance == pt
+                                                #__dict__[self.__name] = value == принимает новые значения
+
+
+
+#class Boint:
+#    coordx = CoordValue('coordx')
+#    coordy = CoordValue('coordy')
+#
+#
+#    def __init__(self, x = 0 , y = 0):
+#        self.coordx = x
+#        self.coordy = y
+    
+#    def __checkValue(x):
+#        if isinstance(x, int) or isinstance(x, float) :
+#            return True
+#        return False
+
+#    @property
+#    def coordx(self):
+#        return self.__x
+
+#    @coordx.setter    
+#    def coordx(self, x):
+#        if Boint.__checkValue(x):
+#            self.__x = x
+#        else:
+#            raise ValueError('Неверный формат данных')
+    
+#    coordx = property(__getCoordx, __setCoordx)
+
+#pt = Boint(1,2)
+#pt.coordx = 6
+#print(pt.coordx , pt.coordy)
+
+#pt.coordx = 100
+#x = pt.coordx
+#print(x)
