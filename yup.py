@@ -168,3 +168,71 @@
 #pt.coordx = 100
 #x = pt.coordx
 #print(x)
+
+
+
+#ПРОСТОЕ НАСЛЕДОВАНИЕ КЛАССОВ ###############################################################
+
+
+#class Person: #parent
+#
+#    def can_breath(self):
+#        print('я могу дышать')
+#
+#    def can_walk(self):
+#        print('я могу ходить')
+
+#class Doctor(Person): #sublclass
+#
+#    def can_cure(self):
+#        print('я могу лечить')
+
+#class Arhitect(Person): #subclass
+#
+#    def can_build(self):
+#        print('я могу построить здание')
+
+
+#print(issubclass(Doctor, Person))
+#print(issubclass(Person, Doctor))
+
+
+#Пространство имен класса Class Body scope in Python #####################################
+
+#class DepartmentIT:
+    
+#    python_dev = 5
+#    go_dev = 3
+#    react_dev = 2
+
+#    def info(self):
+#        print(self.python_dev, self.go_dev, self.react_dev)
+    
+#    def info2(self):
+#        print(DepartmentIT.python_dev, DepartmentIT.go_dev, DepartmentIT.react_dev)
+    
+#    @property
+#    def info_prop(self):
+#        print(self.python_dev, self.go_dev, self.react_dev)
+
+#    @classmethod
+#    def info_class(cls):
+#        print(cls.python_dev, cls.go_dev, cls.react_dev)
+
+#    @staticmethod
+#    def info_static():
+#        print(DepartmentIT.python_dev, DepartmentIT.go_dev, DepartmentIT.react_dev)
+
+#    def make_bakend(self):
+#        print('Pyhon and GO')
+    
+#    def make_frontend(self):
+#        print('React')
+    
+#    def hiring_pyt_dev(self):
+#        DepartmentIT.python_dev = DepartmentIT.python_dev + 1
+
+#it = DepartmentIT()
+#print(it.python_dev)
+#it.hiring_pyt_dev()
+#print(it.python_dev)
