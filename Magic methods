@@ -62,3 +62,18 @@
 
 
 #Магические методы __eq__ и __hash__. Dunder methods в Python########################################
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    
+    def __eq__(self, value): #__eq__ Позволяет реализовать проверку на равенство для экземпляров пользовательских типов. self : Ссылка на экземпляр. value : Объект с которым следует произвести сравнение (справа от оператора сравнения)
+        return isinstance(value, Point) and \
+            self.x == value.x and self.y == value.y 
+    
+    def __hash__(self):
+        return hash((self.x, self.y))
+    
+p = Point(1,2)
+print(hash(p))
