@@ -1,0 +1,64 @@
+#Магические методы. Методы __str__ и __repr__ ################################################
+
+#class Lion:
+#    def __init__(self, name):
+#        self.name = name
+    
+#    def __repr__(self):
+#        return f"The object Lion - {self.name}"
+
+#    def __str__(self):
+#        return f"Lion - {self.name}"
+
+#print(Lion('simba'))
+
+
+#Магические методы __add__, __mul__, __sub__ и __truediv__##############################################
+
+#class BankAccount:
+#    def __init__(self, name, balance):
+#        self.name = name
+#        self.balance = balance
+    
+#    def __add__(self, other):
+#        print('Метод __add__ был создан')
+#        if (isinstance(other, BankAccount)):
+#            return self.balance + other.balance
+#        if (isinstance(other, (int, float))):
+#            return BankAccount(self.name, self.balance+other)
+#        raise NotImplemented
+
+#    def __repr__(self):
+#        return F"Клиент {self.name} с балансом {self.balance}"
+
+#    def __mul__(self, other):
+#        print('Метод __mul__ был создан')
+#        if (isinstance(other, BankAccount)):
+#            return self.balance * other.balance
+#        if (isinstance(other, (int, float))):
+#            return BankAccount(self.name, self.balance*other)
+#        raise NotImplemented
+
+#    def __sub__(self, other):
+#        print('Метод __add__ был создан')
+#        if (isinstance(other, BankAccount)):
+#            return self.balance - other.balance
+#        if (isinstance(other, (int, float))):
+#            return BankAccount(self.name, self.balance-other)
+#        raise NotImplemented
+
+#    def __truediv__(self, other):
+#        print('Метод __add__ был создан')
+#        if (isinstance(other, BankAccount)):
+#            return self.balance / other.balance
+#        if (isinstance(other, (int, float))):
+#            return BankAccount(self.name, self.balance/other)
+#        raise NotImplemented
+
+#t = BankAccount('anon', 230)
+#q = BankAccount('Seva',1000)
+#a = BankAccount('Misha', 100)
+
+
+
+#Магические методы __eq__ и __hash__. Dunder methods в Python########################################
